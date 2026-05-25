@@ -45,6 +45,7 @@ body {
     line-height: 1.6;
     color: var(--dark);
     background: var(--white);
+    overflow-x: hidden;
 }
 
 .container {
@@ -145,7 +146,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    background-image: url('img/hero-banner.png');
+    background-image: url('img/hero-banne.png');
     background-size: cover;
     background-position: center;
     padding: 60px 0;
@@ -954,10 +955,14 @@ h1, h2, h3, h4, h5, h6 {
         order: -1;
     }
     
-    .floating-badge.badge-1,
+    .floating-badge.badge-1 {
+        top: 10px;
+        left: 10px;
+    }
+
     .floating-badge.badge-2 {
-        position: static;
-        margin: 20px auto;
+        bottom: 10px;
+        right: 10px;
     }
     
     .modules-grid {
@@ -998,8 +1003,20 @@ h1, h2, h3, h4, h5, h6 {
     .hero-title {
         font-size: 28px;
     }
-    
+
     .price-big {
         font-size: 42px;
+    }
+
+    .floating-badge {
+        padding: 10px 14px;
+    }
+
+    .badge-number {
+        font-size: 20px;
+    }
+
+    .badge-text {
+        font-size: 11px;
     }
 }
