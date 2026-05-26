@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     currency: 'BRL',
                     cta_location: ctaId
                 });
+                fbq('track', 'Lead');
             }
             
             // Google Analytics Event (se configurado)
@@ -268,3 +269,41 @@ function scrollToElement(elementId) {
         });
     }
 }
+
+// ================================
+// DEBUG PIXEL - REMOVER APÓS TESTES
+// ================================
+window.addEventListener('load', function() {
+    if (typeof fbq !== 'undefined') {
+        console.log('✅ Facebook Pixel loaded successfully');
+        console.log('Pixel ID: 1719817905110207');
+
+        // Force fire ViewContent
+        fbq('track', 'ViewContent', {
+            content_name: 'Renda Visivel 30',
+            content_category: 'Financas Pessoais',
+            content_ids: ['renda-visivel-30'],
+            content_type: 'product',
+            value: 67.00,
+            currency: 'BRL'
+        });
+        console.log('📊 ViewContent fired');
+    } else {
+        console.error('❌ Facebook Pixel not loaded!');
+    }
+});
+
+// Track CTA clicks
+document.querySelectorAll('[id^="cta-"]').forEach(btn => {
+    btn.addEventListener('click', function() {
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'InitiateCheckout', {
+                content_name: 'Renda Visivel 30',
+                value: 67.00,
+                currency: 'BRL'
+            });
+            fbq('track', 'Lead');
+            console.log('💰 InitiateCheckout + Lead fired');
+        }
+    });
+});
