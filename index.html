@@ -5,13 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Transforme sua vida financeira em 30 dias. Saia das dívidas, organize suas contas e construa sua reserva de emergência.">
     <title>Renda Visível 30 - Do Endividado ao Poupador em 30 Dias</title>
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- Google Fonts -->
+
+    <!-- Preconnect to critical origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://connect.facebook.net">
+    <link rel="dns-prefetch" href="https://pay.kiwify.com.br">
+
+    <!-- Preload critical LCP image -->
+    <link rel="preload" as="image" href="img/cover-3d.webp" type="image/webp" fetchpriority="high"
+          imagesrcset="img/cover-3d-400.webp 400w, img/cover-3d-800.webp 800w, img/cover-3d.webp 1254w"
+          imagesizes="(max-width: 992px) 90vw, 45vw">
+
+    <!-- Preload hero background -->
+    <link rel="preload" as="image" href="img/hero-banne.webp" type="image/webp">
+
+    <!-- Critical CSS: above-the-fold only -->
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        :root{
+            --primary:#2563eb;--primary-dark:#1e40af;--secondary:#10b981;
+            --accent:#f59e0b;--dark:#1f2937;--gray:#6b7280;
+            --light-gray:#f3f4f6;--white:#fff;--danger:#ef4444;
+            --font-main:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+            --section-padding:80px 0;--container-max:1200px;
+            --shadow-sm:0 1px 3px rgba(0,0,0,.1);--shadow-md:0 4px 6px rgba(0,0,0,.1);
+            --shadow-lg:0 10px 25px rgba(0,0,0,.15);--shadow-xl:0 20px 40px rgba(0,0,0,.2)
+        }
+        html{scroll-behavior:smooth}
+        body{font-family:var(--font-main);font-size:16px;line-height:1.6;color:var(--dark);background:var(--white);overflow-x:hidden}
+        .container{max-width:var(--container-max);margin:0 auto;padding:0 20px}
+        h1,h2,h3,h4,h5,h6{line-height:1.2;font-weight:700;margin-bottom:1rem}
+        .highlight{color:var(--primary);position:relative}
+        .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;font-size:18px;font-weight:700;text-decoration:none;border-radius:8px;transition:all .3s ease;cursor:pointer;border:none;text-align:center;justify-content:center}
+        .btn-primary{background:var(--primary);color:var(--white);box-shadow:var(--shadow-md)}
+        .btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+        .btn-large{padding:20px 40px;font-size:20px}
+        .btn-huge{padding:24px 48px;font-size:22px;width:100%;max-width:600px}
+        .btn-pulse{animation:pulse 2s infinite}
+        @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,99,235,.7)}50%{box-shadow:0 0 0 10px rgba(37,99,235,0)}}
+        .hero{position:relative;min-height:100vh;display:flex;align-items:center;
+            background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+            background-image:url('img/hero-banne.webp');
+            background-size:cover;background-position:center;padding:60px 0}
+        .hero-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(30,41,59,.85)}
+        .hero-content{position:relative;z-index:10;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+        .hero-tag{display:inline-block;background:var(--accent);color:var(--white);padding:8px 16px;border-radius:20px;font-size:14px;font-weight:600;margin-bottom:20px}
+        .hero-title{font-size:clamp(32px,6vw,56px);color:var(--white);margin-bottom:20px;line-height:1.1}
+        .hero-subtitle{font-size:clamp(16px,3vw,22px);color:rgba(255,255,255,.9);margin-bottom:30px;line-height:1.5}
+        .hero-benefits{display:flex;flex-direction:column;gap:12px;margin-bottom:30px}
+        .benefit-item{display:flex;align-items:center;gap:10px;color:var(--white);font-size:16px}
+        .benefit-item svg{color:var(--secondary);flex-shrink:0}
+        .hero-cta{display:flex;flex-direction:column;align-items:flex-start;gap:15px}
+        .hero-price{display:flex;flex-direction:column;gap:2px}
+        .price-label{color:rgba(255,255,255,.8);font-size:14px}
+        .price-value{color:var(--white);font-size:36px;font-weight:800}
+        .price-installment{color:rgba(255,255,255,.9);font-size:16px}
+        .hero-guarantee{color:rgba(255,255,255,.9);font-size:14px}
+        .urgency-banner{display:flex;align-items:center;gap:10px;background:rgba(239,68,68,.9);padding:12px 20px;border-radius:8px;margin-top:20px;animation:shake 3s infinite}
+        @keyframes shake{0%,100%{transform:translateX(0)}10%,30%,50%,70%,90%{transform:translateX(-2px)}20%,40%,60%,80%{transform:translateX(2px)}}
+        .urgency-icon{font-size:24px}
+        .urgency-text{color:var(--white);font-size:14px}
+        .hero-image{position:relative;display:flex;justify-content:center;align-items:center}
+        .product-cover{max-width:100%;height:auto;filter:drop-shadow(0 20px 40px rgba(0,0,0,.3));animation:float 6s ease-in-out infinite}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+        .floating-badge{position:absolute;background:var(--white);padding:15px 20px;border-radius:12px;box-shadow:var(--shadow-lg);display:flex;flex-direction:column;text-align:center;animation:floatBadge 4s ease-in-out infinite}
+        .floating-badge.badge-1{top:10%;left:-10%}
+        .floating-badge.badge-2{bottom:15%;right:-10%;animation-delay:2s}
+        @keyframes floatBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+        .badge-number{font-size:28px;font-weight:800;color:var(--primary);line-height:1}
+        .badge-text{font-size:12px;color:var(--gray);margin-top:5px}
+        @media(max-width:992px){
+            .hero-content{grid-template-columns:1fr;gap:40px}
+            .hero-image{order:-1}
+            .floating-badge.badge-1{top:10px;left:10px}
+            .floating-badge.badge-2{bottom:10px;right:10px}
+        }
+        @media(max-width:768px){
+            :root{--section-padding:50px 0}
+            .hero{min-height:auto}
+            .hero-cta .btn{width:100%}
+        }
+        @media(max-width:480px){
+            .hero-title{font-size:28px}
+            .floating-badge{padding:10px 14px}
+            .badge-number{font-size:20px}
+            .badge-text{font-size:11px}
+        }
+        /* Prevent CLS on images */
+        img{max-width:100%;height:auto;display:block}
+        .hero-image picture{display:flex;justify-content:center;align-items:center;width:100%}
+    </style>
+
+    <!-- Async load full stylesheet -->
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+
+    <!-- Async Google Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+
     <!-- Meta Tags Open Graph -->
     <meta property="og:title" content="Renda Visível 30 - Do Endividado ao Poupador">
     <meta property="og:description" content="Método prático para transformar sua vida financeira em 30 dias">
@@ -37,7 +130,7 @@
     <!-- End Meta Pixel Code -->
 </head>
 <body>
-    
+
     <!-- HERO SECTION -->
     <section class="hero" id="hero">
         <div class="hero-overlay"></div>
@@ -48,10 +141,10 @@
                     Do Endividado ao Poupador em <span class="highlight">30 Dias</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Transforme sua vida financeira com um método prático e comprovado. 
+                    Transforme sua vida financeira com um método prático e comprovado.
                     <strong>Saia das dívidas, organize suas contas e construa sua reserva de emergência.</strong>
                 </p>
-                
+
                 <div class="hero-benefits">
                     <div class="benefit-item">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -72,7 +165,7 @@
                         <span>Acesso Imediato</span>
                     </div>
                 </div>
-                
+
                 <div class="hero-cta">
                     <a href="https://pay.kiwify.com.br/IVsN7qE" class="btn btn-primary btn-pulse" id="cta-hero">
                         QUERO COMEÇAR AGORA
@@ -90,18 +183,31 @@
                         🔒 Compra 100% Segura | ✅ Garantia de 7 dias
                     </p>
                 </div>
-                
+
                 <div class="urgency-banner">
                     <span class="urgency-icon">⚡</span>
                     <span class="urgency-text">
-                        <strong>ATENÇÃO:</strong> Oferta válida por tempo limitado. 
+                        <strong>ATENÇÃO:</strong> Oferta válida por tempo limitado.
                         <span id="countdown"></span>
                     </span>
                 </div>
             </div>
-            
+
             <div class="hero-image">
-                <img src="img/cover-3d.png" alt="Renda Visível 30 - Capa do Produto" class="product-cover">
+                <picture>
+                    <source
+                        srcset="img/cover-3d-400.webp 400w, img/cover-3d-800.webp 800w, img/cover-3d.webp 1254w"
+                        sizes="(max-width: 992px) 90vw, 45vw"
+                        type="image/webp">
+                    <img src="img/cover-3d.png"
+                         alt="Renda Visível 30 - Capa do Produto"
+                         class="product-cover"
+                         width="1254"
+                         height="1254"
+                         loading="eager"
+                         fetchpriority="high"
+                         decoding="async">
+                </picture>
                 <div class="floating-badge badge-1">
                     <span class="badge-number">143+</span>
                     <span class="badge-text">Páginas de Conteúdo</span>
@@ -113,50 +219,50 @@
             </div>
         </div>
     </section>
-    
+
     <!-- PROBLEMAS SECTION -->
     <section class="problems" id="problems">
         <div class="container">
             <h2 class="section-title">Você se identifica com alguma dessas situações?</h2>
-            
+
             <div class="problems-grid">
                 <div class="problem-card">
                     <div class="problem-icon">😰</div>
                     <h3>Dívidas que não param de crescer</h3>
                     <p>
-                        Você paga a fatura mínima do cartão, mas a dívida só aumenta. 
+                        Você paga a fatura mínima do cartão, mas a dívida só aumenta.
                         Os juros comem seu salário e você não sabe como sair dessa.
                     </p>
                 </div>
-                
+
                 <div class="problem-card">
                     <div class="problem-icon">😓</div>
                     <h3>Dinheiro "some" no meio do mês</h3>
                     <p>
-                        Recebe o salário e em 2 semanas já não tem mais nada. 
+                        Recebe o salário e em 2 semanas já não tem mais nada.
                         Você não sabe pra onde o dinheiro foi e vive no vermelho.
                     </p>
                 </div>
-                
+
                 <div class="problem-card">
                     <div class="problem-icon">😔</div>
                     <h3>Zero reserva de emergência</h3>
                     <p>
-                        Qualquer imprevisto vira desespero: conserto do carro, médico, 
+                        Qualquer imprevisto vira desespero: conserto do carro, médico,
                         conta inesperada... e você não tem R$ 500 guardados.
                     </p>
                 </div>
             </div>
-            
+
             <div class="problems-cta">
                 <p class="problems-text">
-                    <strong>A boa notícia?</strong> Isso TEM solução. 
+                    <strong>A boa notícia?</strong> Isso TEM solução.
                     E não, você não precisa ganhar mais para começar a mudar.
                 </p>
             </div>
         </div>
     </section>
-    
+
     <!-- SOLUÇÃO SECTION -->
     <section class="solution" id="solution">
         <div class="container">
@@ -168,10 +274,10 @@
                         <span class="highlight">O método que revela seu dinheiro</span>
                     </h2>
                     <p class="solution-description">
-                        O Renda Visível 30 é um método prático, passo a passo, 
+                        O Renda Visível 30 é um método prático, passo a passo,
                         que te guia do caos financeiro até a organização completa em apenas 30 dias.
                     </p>
-                    
+
                     <div class="solution-stats">
                         <div class="stat-item">
                             <span class="stat-number">80,2%</span>
@@ -186,7 +292,7 @@
                             <span class="stat-label">para transformar sua vida financeira</span>
                         </div>
                     </div>
-                    
+
                     <ul class="solution-list">
                         <li>✅ Sem teoria complicada ou jargões financeiros</li>
                         <li>✅ Sem precisar ganhar mais para começar</li>
@@ -194,7 +300,7 @@
                         <li>✅ Apenas ações práticas que FUNCIONAM</li>
                     </ul>
                 </div>
-                
+
                 <div class="solution-image">
                     <div class="solution-box">
                         <div class="solution-step">
@@ -218,7 +324,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- CONTEÚDO SECTION -->
     <section class="content" id="content">
         <div class="container">
@@ -226,48 +332,48 @@
             <p class="section-subtitle">
                 7 módulos completos + 5 bônus práticos = <strong>143+ páginas</strong> de conteúdo transformador
             </p>
-            
+
             <!-- MÓDULOS -->
             <div class="modules-container">
                 <h3 class="content-subtitle">📚 7 Módulos Principais</h3>
-                
+
                 <div class="modules-grid">
                     <div class="module-card">
                         <div class="module-number">01</div>
                         <h4>Diagnóstico Financeiro</h4>
                         <p>Descubra exatamente onde seu dinheiro está indo com o teste dos 7 dias</p>
                     </div>
-                    
+
                     <div class="module-card">
                         <div class="module-number">02</div>
                         <h4>A Verdade Sobre Dívidas</h4>
                         <p>Método Bola de Neve Emocional + 5 scripts de negociação prontos</p>
                     </div>
-                    
+
                     <div class="module-card">
                         <div class="module-number">03</div>
                         <h4>Sistema 4 Contas</h4>
                         <p>Organize 100% do seu dinheiro em 4 contas estratégicas</p>
                     </div>
-                    
+
                     <div class="module-card">
                         <div class="module-number">04</div>
                         <h4>Metas Emocionais</h4>
                         <p>Defina objetivos que te motivam de verdade (não apenas números)</p>
                     </div>
-                    
+
                     <div class="module-card">
                         <div class="module-number">05</div>
                         <h4>Cortes Inteligentes</h4>
                         <p>50 formas práticas de economizar R$ 200-800/mês sem sofrer</p>
                     </div>
-                    
+
                     <div class="module-card">
                         <div class="module-number">06</div>
                         <h4>Primeiros R$ 500 de Reserva</h4>
                         <p>3 estratégias para juntar sua primeira reserva em 30 dias</p>
                     </div>
-                    
+
                     <div class="module-card">
                         <div class="module-number">07</div>
                         <h4>Manutenção e Crescimento</h4>
@@ -275,11 +381,11 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- BÔNUS -->
             <div class="bonus-container">
                 <h3 class="content-subtitle">🎁 5 Bônus Exclusivos</h3>
-                
+
                 <div class="bonus-grid">
                     <div class="bonus-card">
                         <div class="bonus-icon">📊</div>
@@ -287,28 +393,28 @@
                         <p>Planilha Excel completa para controlar gastos, 4 contas, dívidas e metas automaticamente</p>
                         <span class="bonus-value">Valor: R$ 47</span>
                     </div>
-                    
+
                     <div class="bonus-card">
                         <div class="bonus-icon">📞</div>
                         <h4>Bônus 2: Scripts de Negociação</h4>
                         <p>15 roteiros prontos para negociar qualquer dívida (cartão, boletos, empréstimos)</p>
                         <span class="bonus-value">Valor: R$ 37</span>
                     </div>
-                    
+
                     <div class="bonus-card">
                         <div class="bonus-icon">✂️</div>
                         <h4>Bônus 3: Checklist Corte Cirúrgico</h4>
                         <p>100 itens para auditar seus gastos e economizar R$ 450-1.300/mês</p>
                         <span class="bonus-value">Valor: R$ 27</span>
                     </div>
-                    
+
                     <div class="bonus-card">
                         <div class="bonus-icon">🎯</div>
                         <h4>Bônus 4: Calculadora Meta Emergência</h4>
                         <p>Planilha que calcula automaticamente quanto você precisa guardar e em quanto tempo</p>
                         <span class="bonus-value">Valor: R$ 27</span>
                     </div>
-                    
+
                     <div class="bonus-card">
                         <div class="bonus-icon">💰</div>
                         <h4>Bônus 5: E-book 10 Fontes Renda Extra</h4>
@@ -316,13 +422,13 @@
                         <span class="bonus-value">Valor: R$ 47</span>
                     </div>
                 </div>
-                
+
                 <div class="bonus-total">
                     <p>Valor total dos bônus: <span class="total-value">R$ 185</span></p>
                     <p class="bonus-free">TODOS INCLUSOS <strong>SEM CUSTO EXTRA</strong></p>
                 </div>
             </div>
-            
+
             <!-- CTA -->
             <div class="content-cta">
                 <a href="https://pay.kiwify.com.br/IVsN7qE" class="btn btn-primary btn-large" id="cta-content">
@@ -332,18 +438,18 @@
             </div>
         </div>
     </section>
-    
+
     <!-- DEPOIMENTOS SECTION -->
     <section class="testimonials" id="testimonials">
         <div class="container">
             <h2 class="section-title">Quem aplicou o método transformou a vida financeira</h2>
-            
+
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
                     <p class="testimonial-text">
-                        "Em 30 dias consegui negociar R$ 12.000 de dívidas por R$ 4.800 à vista. 
-                        Os scripts do Módulo 2 funcionaram exatamente como prometido. 
+                        "Em 30 dias consegui negociar R$ 12.000 de dívidas por R$ 4.800 à vista.
+                        Os scripts do Módulo 2 funcionaram exatamente como prometido.
                         Hoje tenho R$ 1.200 de reserva e durmo tranquila!"
                     </p>
                     <div class="testimonial-author">
@@ -353,12 +459,12 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="testimonial-card">
                     <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
                     <p class="testimonial-text">
-                        "Achei que ia ser mais uma planilha chata. Mas o Sistema 4 Contas mudou TUDO. 
-                        Cortei R$ 890/mês em gastos que nem sabia que tinha. 
+                        "Achei que ia ser mais uma planilha chata. Mas o Sistema 4 Contas mudou TUDO.
+                        Cortei R$ 890/mês em gastos que nem sabia que tinha.
                         2 meses depois já tenho R$ 1.800 guardados. Incrível!"
                     </p>
                     <div class="testimonial-author">
@@ -368,12 +474,12 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="testimonial-card">
                     <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
                     <p class="testimonial-text">
-                        "Estava devendo 8 parcelas do cartão. Segui o passo a passo, 
-                        negociei 60% de desconto e quitei tudo em 3x. O Checklist Corte Cirúrgico 
+                        "Estava devendo 8 parcelas do cartão. Segui o passo a passo,
+                        negociei 60% de desconto e quitei tudo em 3x. O Checklist Corte Cirúrgico
                         me fez economizar R$ 600/mês. Valeu MUITO a pena!"
                     </p>
                     <div class="testimonial-author">
@@ -386,7 +492,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- GARANTIA SECTION -->
     <section class="guarantee" id="guarantee">
         <div class="container">
@@ -400,12 +506,12 @@
                 <div class="guarantee-text">
                     <h2>Garantia de 7 Dias ou Seu Dinheiro de Volta</h2>
                     <p>
-                        Você tem <strong>7 dias completos</strong> para acessar todo o conteúdo, 
+                        Você tem <strong>7 dias completos</strong> para acessar todo o conteúdo,
                         aplicar o método e ver os primeiros resultados.
                     </p>
                     <p>
-                        Se por qualquer motivo você achar que o Renda Visível 30 não é para você, 
-                        basta enviar um email e devolvemos <strong>100% do seu investimento</strong>. 
+                        Se por qualquer motivo você achar que o Renda Visível 30 não é para você,
+                        basta enviar um email e devolvemos <strong>100% do seu investimento</strong>.
                         Sem perguntas, sem burocracia.
                     </p>
                     <p class="guarantee-highlight">
@@ -415,12 +521,12 @@
             </div>
         </div>
     </section>
-    
+
     <!-- FAQ SECTION -->
     <section class="faq" id="faq">
         <div class="container">
             <h2 class="section-title">Perguntas Frequentes</h2>
-            
+
             <div class="faq-container">
                 <div class="faq-item">
                     <button class="faq-question">
@@ -429,13 +535,13 @@
                     </button>
                     <div class="faq-answer">
                         <p>
-                            Assim que o pagamento for confirmado, você recebe um email com login e senha 
-                            para acessar a área de membros. Lá você encontra todos os 7 módulos em PDF 
+                            Assim que o pagamento for confirmado, você recebe um email com login e senha
+                            para acessar a área de membros. Lá você encontra todos os 7 módulos em PDF
                             e os 5 bônus disponíveis para download imediato. O acesso é vitalício!
                         </p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <button class="faq-question">
                         Preciso ter conhecimento em finanças?
@@ -443,13 +549,13 @@
                     </button>
                     <div class="faq-answer">
                         <p>
-                            NÃO! O Renda Visível 30 foi criado justamente para quem NÃO entende de finanças. 
-                            Tudo é explicado de forma simples, sem jargões complicados. 
+                            NÃO! O Renda Visível 30 foi criado justamente para quem NÃO entende de finanças.
+                            Tudo é explicado de forma simples, sem jargões complicados.
                             Se você sabe ler e seguir instruções passo a passo, você consegue.
                         </p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <button class="faq-question">
                         Funciona mesmo em apenas 30 dias?
@@ -457,13 +563,13 @@
                     </button>
                     <div class="faq-answer">
                         <p>
-                            Sim! O método é dividido em 4 semanas com ações específicas para cada período. 
-                            Em 7 dias você já terá clareza total de onde seu dinheiro está indo. 
+                            Sim! O método é dividido em 4 semanas com ações específicas para cada período.
+                            Em 7 dias você já terá clareza total de onde seu dinheiro está indo.
                             Em 30 dias, terá o sistema completo funcionando e os primeiros R$ 500 de reserva.
                         </p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <button class="faq-question">
                         E se eu tiver dúvidas durante o processo?
@@ -471,13 +577,13 @@
                     </button>
                     <div class="faq-answer">
                         <p>
-                            Todo o conteúdo é autoexplicativo e completo. Cada módulo tem exemplos práticos 
-                            e casos reais. Além disso, você tem 7 dias de garantia - se tiver qualquer dificuldade, 
+                            Todo o conteúdo é autoexplicativo e completo. Cada módulo tem exemplos práticos
+                            e casos reais. Além disso, você tem 7 dias de garantia - se tiver qualquer dificuldade,
                             pode pedir reembolso sem problemas.
                         </p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <button class="faq-question">
                         Posso parcelar o pagamento?
@@ -485,8 +591,8 @@
                     </button>
                     <div class="faq-answer">
                         <p>
-                            Sim! Você pode parcelar em até 3x de R$ 22,33 no cartão de crédito, 
-                            ou pagar à vista via PIX/Boleto. O acesso é liberado imediatamente após 
+                            Sim! Você pode parcelar em até 3x de R$ 22,33 no cartão de crédito,
+                            ou pagar à vista via PIX/Boleto. O acesso é liberado imediatamente após
                             a confirmação do pagamento.
                         </p>
                     </div>
@@ -494,20 +600,20 @@
             </div>
         </div>
     </section>
-    
+
     <!-- CTA FINAL SECTION -->
     <section class="cta-final" id="cta-final">
         <div class="container">
             <div class="cta-final-content">
                 <h2>Está na hora de transformar sua vida financeira</h2>
                 <p>
-                    Imagine daqui a 30 dias: sem dívidas sufocantes, com uma reserva de emergência 
+                    Imagine daqui a 30 dias: sem dívidas sufocantes, com uma reserva de emergência
                     começando a crescer, e dormindo tranquilo sabendo exatamente para onde seu dinheiro está indo.
                 </p>
                 <p class="cta-final-bold">
                     <strong>Tudo isso por menos de R$ 3 por dia.</strong>
                 </p>
-                
+
                 <div class="cta-final-box">
                     <div class="cta-final-offer">
                         <span class="offer-tag">OFERTA ESPECIAL</span>
@@ -523,37 +629,41 @@
                             <li>✅ Garantia de 7 Dias</li>
                         </ul>
                     </div>
-                    
-                    <a href="https://pay.kiwify.com.br/IVsN7qE" class="btn btn-primary btn-huge btn-pulse" id="cta-final">
+
+                    <a href="https://pay.kiwify.com.br/IVsN7qE" class="btn btn-primary btn-huge btn-pulse" id="cta-final-btn">
                         SIM! QUERO TRANSFORMAR MINHA VIDA FINANCEIRA
                     </a>
-                    
+
                     <p class="cta-final-guarantee">
                         🔒 Pagamento 100% Seguro | ✅ Garantia Incondicional de 7 Dias
                     </p>
                 </div>
-                
+
                 <p class="cta-final-warning">
-                    ⚠️ <strong>ATENÇÃO:</strong> Esta oferta pode ser encerrada a qualquer momento. 
+                    ⚠️ <strong>ATENÇÃO:</strong> Esta oferta pode ser encerrada a qualquer momento.
                     Garanta seu acesso agora antes que o preço aumente.
                 </p>
             </div>
         </div>
     </section>
-    
+
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Renda Visível 30. Todos os direitos reservados.</p>
             <p class="footer-small">
-                Este site não faz parte do Facebook ou do Google. 
+                Este site não faz parte do Facebook ou do Google.
                 Além disso, NÃO somos endossados pelo Facebook ou Google de nenhuma maneira.
             </p>
         </div>
     </footer>
-    
+
     <!-- Scripts -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
 
 </body>
 </html>

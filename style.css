@@ -147,9 +147,23 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     background-image: url('img/hero-banne.png');
+    background-image: image-set(
+        url('img/hero-banne.webp') type("image/webp"),
+        url('img/hero-banne.png') type("image/png")
+    );
     background-size: cover;
     background-position: center;
     padding: 60px 0;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background-image: url('img/hero-banne-800.webp');
+        background-image: image-set(
+            url('img/hero-banne-800.webp') type("image/webp"),
+            url('img/hero-banne.png') type("image/png")
+        );
+    }
 }
 
 .hero-overlay {
@@ -1019,4 +1033,38 @@ h1, h2, h3, h4, h5, h6 {
     .badge-text {
         font-size: 11px;
     }
+}
+
+/* =================================
+   IMAGE PERFORMANCE
+   ================================= */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+img[loading="eager"] {
+    opacity: 1;
+}
+
+.hero-image picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Prevent layout shift on hero image */
+.hero-image .product-cover {
+    aspect-ratio: 1 / 1;
 }

@@ -1,0 +1,23 @@
+{
+  "name": "rendavisivel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunopontes90/rendavisivel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brunopontes90/rendavisivel/issues"
+  },
+  "homepage": "https://github.com/brunopontes90/rendavisivel#readme",
+  "devDependencies": {
+    "sharp": "^0.34.5"
+  }
+}
