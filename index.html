@@ -12,13 +12,17 @@
     <link rel="preconnect" href="https://connect.facebook.net">
     <link rel="dns-prefetch" href="https://pay.kiwify.com.br">
 
-    <!-- Preload critical LCP image -->
-    <link rel="preload" as="image" href="img/cover-3d.webp" type="image/webp" fetchpriority="high"
-          imagesrcset="img/cover-3d-400.webp 400w, img/cover-3d-800.webp 800w, img/cover-3d.webp 1254w"
-          imagesizes="(max-width: 992px) 90vw, 45vw">
+    <!-- Preload LCP image - mobile gets 400w, desktop gets 800w -->
+    <link rel="preload" as="image" href="img/cover-3d-400.webp" type="image/webp"
+          fetchpriority="high" media="(max-width: 768px)">
+    <link rel="preload" as="image" href="img/cover-3d-800.webp" type="image/webp"
+          fetchpriority="high" media="(min-width: 769px)">
 
-    <!-- Preload hero background -->
-    <link rel="preload" as="image" href="img/hero-banne.webp" type="image/webp">
+    <!-- Preload hero background - mobile gets 800w, desktop gets full -->
+    <link rel="preload" as="image" href="img/hero-banne-800.webp" type="image/webp"
+          media="(max-width: 768px)">
+    <link rel="preload" as="image" href="img/hero-banne.webp" type="image/webp"
+          media="(min-width: 769px)">
 
     <!-- Critical CSS: above-the-fold only -->
     <style>
@@ -196,14 +200,14 @@
             <div class="hero-image">
                 <picture>
                     <source
-                        srcset="img/cover-3d-400.webp 400w, img/cover-3d-800.webp 800w, img/cover-3d.webp 1254w"
-                        sizes="(max-width: 992px) 90vw, 45vw"
+                        srcset="img/cover-3d-400.webp 400w, img/cover-3d-800.webp 800w, img/cover-3d.webp 1200w"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         type="image/webp">
-                    <img src="img/cover-3d.png"
+                    <img src="img/cover-3d-opt.png"
                          alt="Renda Visível 30 - Capa do Produto"
                          class="product-cover"
-                         width="1254"
-                         height="1254"
+                         width="1200"
+                         height="1200"
                          loading="eager"
                          fetchpriority="high"
                          decoding="async">
