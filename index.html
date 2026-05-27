@@ -31,7 +31,7 @@
             --primary:#2563eb;--primary-dark:#1e40af;--secondary:#10b981;
             --accent:#f59e0b;--dark:#1f2937;--gray:#6b7280;
             --light-gray:#f3f4f6;--white:#fff;--danger:#ef4444;
-            --font-main:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+            --font-main:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
             --section-padding:80px 0;--container-max:1200px;
             --shadow-sm:0 1px 3px rgba(0,0,0,.1);--shadow-md:0 4px 6px rgba(0,0,0,.1);
             --shadow-lg:0 10px 25px rgba(0,0,0,.15);--shadow-xl:0 20px 40px rgba(0,0,0,.2)
@@ -98,16 +98,13 @@
         }
         /* Prevent CLS on images */
         img{max-width:100%;height:auto;display:block}
-        .hero-image picture{display:flex;justify-content:center;align-items:center;width:100%}
+        .hero-image picture{display:flex;justify-content:center;align-items:center;width:100%;aspect-ratio:1/1;max-width:500px;margin:0 auto}.product-cover{aspect-ratio:1/1;width:100%;height:auto;max-width:500px}.hero-image{min-height:300px}.floating-badge{will-change:transform}
     </style>
 
     <!-- Async load full stylesheet -->
     <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="style.css"></noscript>
 
-    <!-- Async Google Fonts -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
 
     <!-- Meta Tags Open Graph -->
     <meta property="og:title" content="Renda Visível 30 - Do Endividado ao Poupador">
