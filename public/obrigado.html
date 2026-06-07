@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Pagamento aprovado — Renda Visível 30</title>
+<style>
+  :root{
+    --navy:#0c1f3f; --navy2:#13284f; --gold:#f4b63f;
+    --green:#1ba755; --green-d:#147f3e;
+    --ink:#10203a; --muted:#5d6b82; --bg:#eceff4;
+    --card:#ffffff; --line:#e6eaf1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background:var(--bg); color:var(--ink);
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+    padding:18px;
+  }
+  .wrap{max-width:620px;margin:0 auto}
+  .card{
+    background:var(--card); border-radius:18px; overflow:hidden;
+    box-shadow:0 12px 40px rgba(12,31,63,.10); border:1px solid var(--line);
+  }
+
+  /* Faixa de confirmação */
+  .ok{
+    background:linear-gradient(135deg,var(--green),var(--green-d));
+    color:#fff; padding:22px 24px; text-align:center;
+  }
+  .ok .check{
+    width:46px;height:46px;border-radius:50%;
+    background:rgba(255,255,255,.18); display:inline-flex;
+    align-items:center;justify-content:center;font-size:24px;margin-bottom:8px;
+  }
+  .ok h1{font-size:19px;font-weight:700;letter-spacing:.2px}
+  .ok p{font-size:13.5px;opacity:.92;margin-top:4px}
+
+  .body{padding:26px 24px 30px}
+  .confirm-note{
+    font-size:13.5px;color:var(--muted);text-align:center;
+    background:#f5f8fc;border:1px solid var(--line);border-radius:12px;
+    padding:12px 14px;margin-bottom:26px;
+  }
+  .confirm-note strong{color:var(--ink)}
+
+  .kicker{
+    display:inline-block;background:rgba(244,182,63,.16);color:#9a6b07;
+    font-size:11.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
+    padding:6px 12px;border-radius:999px;margin-bottom:14px;
+  }
+  h2{font-size:25px;line-height:1.2;color:var(--navy);font-weight:800;letter-spacing:-.4px}
+  .lead{margin-top:12px;font-size:15.5px;color:#34435c}
+
+  ul{list-style:none;margin:20px 0 4px}
+  li{position:relative;padding:9px 0 9px 32px;font-size:15px;border-bottom:1px solid #f0f3f8}
+  li:last-child{border-bottom:none}
+  li::before{
+    content:"✓";position:absolute;left:0;top:9px;
+    width:21px;height:21px;border-radius:50%;
+    background:var(--green);color:#fff;font-size:12px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+  }
+
+  .price{
+    margin:24px 0 6px;text-align:center;
+    background:var(--navy);color:#fff;border-radius:14px;padding:18px;
+  }
+  .price .small{font-size:13px;opacity:.7;text-decoration:line-through}
+  .price .big{font-size:30px;font-weight:800;color:var(--gold);margin:2px 0}
+  .price .small2{font-size:13px;opacity:.85}
+
+  /* ÁREA DO BOTÃO DA KIWIFY */
+  .botao-kiwify{margin:22px 0 6px}
+  .placeholder{
+    border:2px dashed #c2cee0;border-radius:12px;background:#f7faff;
+    padding:26px 16px;text-align:center;color:#8090a8;font-size:13.5px;
+  }
+
+  .guarantee{
+    display:flex;gap:10px;align-items:flex-start;
+    margin-top:20px;padding:14px 16px;background:#f5f8fc;
+    border-radius:12px;border:1px solid var(--line);
+  }
+  .guarantee .ic{font-size:20px;line-height:1.2}
+  .guarantee p{font-size:13px;color:var(--muted)}
+  .guarantee strong{color:var(--ink)}
+
+  .foot{text-align:center;font-size:11.5px;color:#9aa6b8;margin-top:18px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+
+      <div class="ok">
+        <div class="check">✓</div>
+        <h1>Pagamento aprovado!</h1>
+        <p>Seu acesso ao <strong>Renda Visível 30</strong> está a caminho do seu e-mail.</p>
+      </div>
+
+      <div class="body">
+
+        <div class="confirm-note">
+          <strong>Sua compra já está confirmada.</strong> O que vem a seguir é uma oferta extra e totalmente opcional — você decide.
+        </div>
+
+        <span class="kicker">Oferta única · só nesta página</span>
+        <h2>Espere! Você saiu das dívidas… e agora?</h2>
+        <p class="lead">
+          O Renda Visível te tira do vermelho e te faz poupar. O passo seguinte é fazer esse dinheiro
+          render — com segurança e sem precisar ser expert. É exatamente isso que o
+          <strong>“Do Poupador ao Investidor”</strong> te mostra, na mesma linguagem simples do método.
+        </p>
+
+        <ul>
+          <li>Onde guardar sua reserva pra ela render mais que a poupança (renda fixa segura)</li>
+          <li>Como dar os primeiros passos pra investir do zero, mesmo com pouco</li>
+          <li>Os erros que fazem o iniciante perder dinheiro — e como evitar</li>
+          <li>Passo a passo, sem juridiquês, do jeito Renda Visível</li>
+        </ul>
+
+        <div class="price">
+          <div class="small">de R$ 97</div>
+          <div class="big">por R$ 47</div>
+          <div class="small2">em 1 clique, sem digitar o cartão de novo</div>
+        </div>
+
+        <div style="text-align:center" id="kiwify-upsell-aNnhUaH" data-upsell-url="" data-downsell-url="">
+          <button id="kiwify-upsell-trigger-aNnhUaH" style="background-color:#5383ad;padding:12px 16px;cursor:pointer;color:#FFFFFF;font-weight:600;border-radius:4px;border:1px solid #5383ad;font-size:20px;">Sim, quero investir com segurança</button>
+          <div id="kiwify-upsell-cancel-trigger-aNnhUaH" style="margin-top:1rem;cursor:pointer;font-size:16px;text-decoration:underline;font-family:sans-serif;">Não, prefiro continuar só poupando</div>
+        </div><script src="https://snippets.kiwify.com/upsell/upsell.min.js"></script>
+
+        <div class="guarantee">
+          <div class="ic">🔒</div>
+          <p><strong>Garantia de 7 dias.</strong> Se não for pra você, é só pedir o reembolso e devolvemos 100%. Sem risco.</p>
+        </div>
+
+        <p class="foot">Renda Visível · pagamento processado com segurança pela Kiwify</p>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
