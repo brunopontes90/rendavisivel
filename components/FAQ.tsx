@@ -3,7 +3,7 @@ import { useState } from "react";
 import CtaButton from "./CtaButton";
 
 const faqs = [
-  { q: "Estou sem dinheiro. Como vou pagar R$ 197?", a: "Dá para parcelar em até 12x (cerca de R$ 20 por mês), menos do que poucos dias de juros do rotativo. A primeira fase do protocolo é justamente liberar dinheiro cortando o que está drenando seu orçamento." },
+  { q: "Estou sem dinheiro. Como vou pagar R$ 197?", a: "Dá para parcelar em até 12x (cerca de R$ 20 por mês). E a primeira fase do protocolo é justamente encontrar gastos que dá para cortar, para sobrar dinheiro para as dívidas." },
   { q: "Isso é só teoria?", a: "Não. Cada fase termina com uma ação prática: um checklist, uma planilha ou uma mensagem pronta para enviar ao banco. Você aplica no mesmo dia." },
   { q: "Nunca usei ChatGPT. Vou conseguir usar o Negociador IA?", a: "Sim. Você só copia, cola e troca os dados entre colchetes. O guia rápido mostra tudo em 3 passos, e funciona na versão gratuita." },
   { q: "Meu nome está sujo. Funciona para mim?", a: "Funciona. O protocolo mostra como negociar dívidas em atraso e como consultar todas as suas dívidas de graça pelo Registrato, do Banco Central." },

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const fases = [
   ["1. Estancar", "Pare a sangria: saia do rotativo e corte o que está drenando seu dinheiro."],
   ["2. Negociar", "Use o Negociador IA: a Inteligência Artificial escreve a mensagem pronta para o seu banco."],
@@ -12,10 +14,13 @@ export default function Problema() {
           O &ldquo;pagamento mínimo&rdquo; é a armadilha mais cara do Brasil.
         </h2>
         <p className="mt-4">
-          Os juros do rotativo do cartão estão entre os mais altos do mundo.
+          Os juros do rotativo do cartão estão entre os mais altos do mercado.
           Quando a fatura não é paga inteira, a dívida pode chegar ao{" "}
           <strong>dobro do valor original</strong>, o máximo que a lei permite.
         </p>
+        <div className="mx-auto mt-6 max-w-xs">
+          <Image src="/img/fatura.webp" alt="Fatura do cartão mostrando o pagamento mínimo" width={1040} height={1320} />
+        </div>
         <div className="mt-6 rounded-xl bg-[#F1F5F9] p-5">
           <p className="text-sm text-slate-500">Na prática:</p>
           <p className="mt-1 text-lg font-bold text-[#0B1F3A]">

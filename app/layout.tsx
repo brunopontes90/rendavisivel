@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Método em 3 fases + Negociador IA: mensagens prontas para negociar com o banco, direto do celular.",
   openGraph: {
     title: "Protocolo Fôlego",
-    description: "Pare de pagar o mínimo. Volte a respirar em 7 dias.",
+    description: "Pare de pagar o mínimo. Monte seu plano de saída em 7 dias.",
     locale: "pt_BR",
     type: "website",
   },

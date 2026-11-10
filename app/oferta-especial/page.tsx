@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const beneficios = [
-  ["Plano personalizado em 10 minutos", "a IA organiza todas as suas dívidas e diz exatamente o que pagar, quando e quanto."],
+  ["Plano personalizado em poucos minutos", "a IA organiza as suas dívidas e sugere a ordem de pagamento, mês a mês."],
   ["10 prompts avançados para casos difíceis", "nome sujo, cobrança indevida, consignado, portabilidade e reclamação no Procon."],
   ["Módulo de dívidas complexas", "como juntar todas as dívidas numa repactuação só, pela Lei do Superendividamento."],
 ];
@@ -48,10 +48,8 @@ export default function OfertaEspecial() {
         </ul>
 
         <div className="mt-8 rounded-2xl bg-white p-6 text-center text-[#0B1F3A]">
-          <p className="text-sm text-slate-500">
-            de <span className="line-through">{UPSELL.anchor}</span>
-          </p>
-          <p className="text-4xl font-extrabold text-[#16A34A]">por {UPSELL.price}</p>
+          <p className="text-sm text-slate-500">Oferta só para quem acabou de comprar</p>
+          <p className="text-4xl font-extrabold text-[#16A34A]">{UPSELL.price}</p>
           <p className="mt-1 text-xs text-slate-500">em 1 clique, sem digitar o cartão de novo</p>
 
           {/* ===== KIWIFY ONE-CLICK UPSELL =====

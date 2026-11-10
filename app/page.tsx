@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Problema from "@/components/Problema";
+import PorDentro from "@/components/PorDentro";
 import Stack from "@/components/Stack";
 import Guarantee from "@/components/Guarantee";
 import FAQ from "@/components/FAQ";
@@ -12,6 +13,7 @@ export default function Home() {
       <TrackViewContent />
       <Hero />
       <Problema />
+      <PorDentro />
       <Stack />
       <Guarantee />
       <FAQ />
