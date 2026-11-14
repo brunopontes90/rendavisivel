@@ -10,6 +10,14 @@ export default function Problema() {
   return (
     <section id="problema" className="scroll-mt-4 bg-white px-5 py-14 text-slate-800">
       <div className="mx-auto max-w-xl">
+        <p className="text-xs font-semibold uppercase tracking-wide text-[#FF7A1A]">
+          Isso parece com a sua rotina?
+        </p>
+        <ul className="mb-8 mt-3 space-y-2 text-slate-800">
+          <li>➜ Você paga a fatura todo mês e o saldo quase não diminui?</li>
+          <li>➜ Já deixou de abrir o app do banco para não ver o valor?</li>
+          <li>➜ Já recebeu ligação de cobrança e não soube o que responder?</li>
+        </ul>
         <h2 className="text-2xl font-extrabold text-[#0B1F3A]">
           O &ldquo;pagamento mínimo&rdquo; é a armadilha mais cara do Brasil.
         </h2>
